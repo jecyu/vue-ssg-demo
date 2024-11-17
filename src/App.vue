@@ -1,11 +1,22 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/demo">Demo</router-link>
   </nav>
   <router-view/>
 </template>
 
+<script>
+import { defineComponent } from "vue";
+export default defineComponent({
+  name: "App",
+  mounted() {
+    document.dispatchEvent(new Event("render-event"));
+  },
+});
+
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

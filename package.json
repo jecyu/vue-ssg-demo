@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dev": "webpack serve -c ./webpack.dev.js --mode=development",
+    "build": "webpack -c ./webpack.prod.js --mode=production",
+    "preview": "node ./scripts/preview.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -13,9 +14,17 @@
     "vuex": "^4.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-plugin-vuex": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@prerenderer/renderer-puppeteer": "^1.2.4",
+    "@prerenderer/webpack-plugin": "^5.3.10",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "express": "^4.21.1",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "vue-loader": "^17.4.2",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0",
+    "webpack-merge": "^6.0.1"
   }
 }
